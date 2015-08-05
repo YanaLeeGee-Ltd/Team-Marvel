@@ -1,1 +1,15 @@
+// SET UP STYLES
 @import 'normalize';
+@import 'variables';
+// FONT STYLES
+
+body {
+	font-family: $bodyCopy;
+	font-size: 13px;
+}
+
+
+h1, h2, h3, h4 {
+	font-family: $headerCopy;
+}
+
