@@ -1,0 +1,25 @@
+{
+  "name": "team-marvel",
+  "version": "1.0.0",
+  "description": "Testing out gulp",
+  "main": "js/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cgooyers/gh-pages.git"
+  },
+  "author": "Christina Gooyers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgooyers/gh-pages/issues"
+  },
+  "homepage": "https://github.com/cgooyers/gh-pages",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sass": "^2.0.4"
+  }
+}
