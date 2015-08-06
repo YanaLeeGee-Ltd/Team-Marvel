@@ -17,11 +17,11 @@ app.init = function() {
 	$.when( app.getStory(1009664), app.getStory(1011299),
 	app.getStory(1010802), app.getStory(1009220), app.getStory(1009282) )
 	.then(function(thor, guardians, ant, captain, doctor) {
-		// console.log(thor);
-		// console.log(guardians);
-		// console.log(ant);
-		// console.log(captain);
-		// console.log(doctor);
+		app.displayStories(thor[0].data.results);
+		app.displayStories(guardians[0].data.results);
+		app.displayStories(ant[0].data.results);
+		app.displayStories(captain[0].data.results);
+		app.displayStories(doctor[0].data.results);
 	})
 };
 
