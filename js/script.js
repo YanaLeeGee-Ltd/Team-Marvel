@@ -7,21 +7,21 @@ var app = {};
 app.init = function() {
 	$.when( app.getComic(1009664), app.getComic(1011299),
 	app.getComic(1010802), app.getComic(1009220), app.getComic(1009282) )
-	.then(function(res1, res2, res3, res4, res5) {
-		console.log(res1);
-		console.log(res2);
-		console.log(res3);
-		console.log(res4);
-		console.log(res5);
+	.then(function(thor, guardians, ant, captain, doctor) {
+		console.log(thor);
+		console.log(guardians);
+		console.log(ant);
+		console.log(captain);
+		console.log(doctor);
 	})
 	$.when( app.getStory(1009664), app.getStory(1011299),
 	app.getStory(1010802), app.getStory(1009220), app.getStory(1009282) )
-	.then(function(res1, res2, res3, res4, res5) {
-		console.log(res1);
-		console.log(res2);
-		console.log(res3);
-		console.log(res4);
-		console.log(res5);
+	.then(function(thor, guardians, ant, captain, doctor) {
+		console.log(thor);
+		console.log(guardians);
+		console.log(ant);
+		console.log(captain);
+		console.log(doctor);
 	})
 };
 
@@ -39,6 +39,34 @@ app.getStory = function(charID) {
 		dataType: "json"
 	});
 };
+
+// app.displayComics = function(comicInfo) {
+// 	var comic1 = 
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
