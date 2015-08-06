@@ -14,8 +14,6 @@ app.init = function() {
 		console.log(res4);
 		console.log(res5);
 	})
-};
-app.init = function() {
 	$.when( app.getStory(1009664), app.getStory(1011299),
 	app.getStory(1010802), app.getStory(1009220), app.getStory(1009282) )
 	.then(function(res1, res2, res3, res4, res5) {
@@ -29,31 +27,19 @@ app.init = function() {
 
 app.getComic = function(charID) {
 	return $.ajax({
-		url: "http://gateway.marvel.com:80/v1/public/comics",
+		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/comics?limit=20&apikey=3f46443479cb8f77ac54daa5c934d370",
 		type: "GET",
-		dataType: "json",
-		data: {
-			apikey: "3f46443479cb8f77ac54daa5c934d370",
-			format: "comic",
-			formatType: "comic",
-			dateRange: "2010-01-01,2015-05-08",
-			characters: charID,
-			limit: 20
-		}
+		dataType: "json"
 	});
 };
 app.getStory = function(charID) {
 	return $.ajax({
-		url: "http://gateway.marvel.com:80/v1/public/stories",
+		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/series?limit=20&apikey=3f46443479cb8f77ac54daa5c934d370",
 		type: "GET",
-		dataType: "json",
-		data: {
-			apikey: "3f46443479cb8f77ac54daa5c934d370",
-			characters: charID,
-			limit: 20
-		}
+		dataType: "json"
 	});
 };
+
 
 
 
