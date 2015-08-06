@@ -49,10 +49,7 @@ app.getStory = function(charID) {
 		dataType: "json",
 		data: {
 			apikey: "3f46443479cb8f77ac54daa5c934d370",
-			// format: "stories",
-			// formatType: "comic",
-			// dateRange: "2010-01-01,2015-05-08",
-			// characters: charID,
+			characters: charID,
 			limit: 20
 		}
 	});
