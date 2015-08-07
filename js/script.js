@@ -16,7 +16,6 @@ app.init = function() {
 		//it is associated with that characters 
 		.then(function(thor,guardians,ant,captain, doctor) {
 			app.displayThor(thor);
-			console.log(thor);
 			app.displayGuard(guardians);
 			app.displayAnt(ant);
 			app.displayCap(captain);
@@ -66,13 +65,13 @@ app.getCharacterInfo = function(charID) {
 app.displayThor = function(thor) {
 
 	var thorComic = thor.comic.data.results;
-	var thorStory = thor.story.data.results[0];
+	var thorStory = thor.story.data.results;
 
-	for (i = 0; i <= thorComic.length; i++){
+	for (i = 0; i < thorComic.length; i++){
 		var $comicContainer = $("<div>");
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",thorComic[i].thumbnail.path + "." + thorComic[i].thumbnail.extension);
+		$comicPic.attr("src", thorComic[i].thumbnail.path + "." + thorComic[i].thumbnail.extension);
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(thorComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -84,66 +83,73 @@ app.displayThor = function(thor) {
 
 app.displayGuard = function(guard) {
 
-	var guardComic = guard.comic.data.results[0];
-	var guardStory = guard.story.data.results[0];
+	var guardComic = guard.comic.data.results;
+	var guardStory = guard.story.data.results;
 
-	
+	for (i = 0; i < guardComic.length; i++) {
 		var $comicContainer = $("<div>");
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",guardComic.thumbnail.path + "." + guardComic.thumbnail.extension);
+		$comicPic.attr("src", guardComic[i].thumbnail.path + "." + guardComic[i].thumbnail.extension);
 		var $comicDescrip = $("<p>");
-		$comicDescrip.text(guardComic.description);
+		$comicDescrip.text(guardComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".two").append($comicContainer);
+	};	
 		
 };
 
 app.displayAnt = function(ant) {
 
-	var antComic = ant.comic.data.results[0];
-	var antStory = ant.story.data.results[0];
+	var antComic = ant.comic.data.results;
+	var antStory = ant.story.data.results;
 	
+	for (i = 0; i < antComic.length; i++){
 		var $comicContainer = $("<div>");
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",antComic.thumbnail.path + "." + antComic.thumbnail.extension);
+		$comicPic.attr("src", antComic[i].thumbnail.path + "." + antComic[i].thumbnail.extension);
 		var $comicDescrip = $("<p>");
-		$comicDescrip.text(antComic.description);
+		$comicDescrip.text(antComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".three").append($comicContainer);
-		
+	};	
+
 };
 
 app.displayCap = function(cap) {
 
-	var capComic = cap.comic.data.results[0];
-	var capStory = cap.story.data.results[0];
-	
+	var capComic = cap.comic.data.results;
+	var capStory = cap.story.data.results;
+
+	for (i = 0; i < capComic.length; i++){
 		var $comicContainer = $("<div>");
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",capComic.thumbnail.path + "." + capComic.thumbnail.extension);
+		$comicPic.attr("src",capComic[i].thumbnail.path + "." + capComic[i].thumbnail.extension);
 		var $comicDescrip = $("<p>");
-		$comicDescrip.text(capComic.description);
+		$comicDescrip.text(capComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".four").append($comicContainer);
+	};	
 		
 };
 
 app.displayDoc = function(doc) {
 
-	var docComic = doc.comic.data.results[0];
-	var docStory = doc.story.data.results[0];
-	
+	var docComic = doc.comic.data.results;
+	var docStory = doc.story.data.results;
+
+	for (i = 0; i < docComic.length; i++){
 		var $comicContainer = $("<div>");
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",docComic.thumbnail.path + "." + docComic.thumbnail.extension);
+		$comicPic.attr("src",docComic[i].thumbnail.path + "." + docComic[i].thumbnail.extension);
 		var $comicDescrip = $("<p>");
-		$comicDescrip.text(docComic.description);
+		$comicDescrip.text(docComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".five").append($comicContainer);
+	};	
 		
 };
 
