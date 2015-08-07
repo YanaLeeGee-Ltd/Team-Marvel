@@ -21,6 +21,7 @@ h1, h2, h3, h4 {
 
 .content-wrapper {
 	display: flex;
+	overflow: hidden;
 }
 
 .marvel-title {
@@ -36,3 +37,122 @@ h1, h2, h3, h4 {
 		width: 100%;
 	}
 }
+
+form {
+	overflow-x: hidden;
+	// position: relative;
+}
+
+form .movie {
+	position: absolute;
+	bottom:0;
+	width: 100%;
+	transition: all .75s ease-in-out;
+}
+
+.one {
+	background:red;
+	left:0;
+}
+
+.two {
+	background:blue;
+	left:100%;
+}
+
+.three {
+	background: green;
+	left:200%;
+}
+
+.four {
+	background:yellow;
+	left:300%;
+}
+
+.five {
+	background: orange;
+	left:400%;
+}
+
+.guardians:checked ~ .one {
+  left:-100%;
+}
+
+.guardians:checked ~ .two {
+  left:0;
+}
+
+.guardians:checked ~ .three {
+  left:100%;
+}
+
+.guardians:checked ~ .four {
+  left:200%;
+}
+
+.guardians:checked ~ .five {
+  left:300%;
+}
+
+.ant:checked ~ .one {
+  left:-200%;
+}
+
+.ant:checked ~ .two {
+  left:-100%;
+}
+
+.ant:checked ~ .three {
+  left:0;
+}
+
+.ant:checked ~ .four {
+  left:100%;
+}
+
+.ant:checked ~ .five {
+  left:200%;
+}
+
+.captain:checked ~ .one {
+  left:-300%;
+}
+
+.captain:checked ~ .two {
+  left:-200%;
+}
+
+.captain:checked ~ .three {
+  left:-100%;
+}
+
+.captain:checked ~ .four {
+  left:0;
+}
+
+.captain:checked ~ .five {
+  left:100%;
+}
+
+.doctor:checked ~ .one {
+  left:-400%;
+}
+
+.doctor:checked ~ .two {
+  left:-300%;
+}
+
+.doctor:checked ~ .three {
+  left:-200%;
+}
+
+.doctor:checked ~ .four {
+  left:-100%;
+}
+
+.doctor:checked ~ .five {
+  left:0;
+}
+
+
