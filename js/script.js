@@ -15,17 +15,12 @@ app.init = function() {
 		//And what is returned is our new bit of data
 		//it is associated with that characters 
 		.then(function(thor,guardians,ant,captain, doctor) {
-			// console.log(thor);
-			app.displayCharacter(thor);
-			// console.log(guardians);
-			app.displayCharacter(guardians);
-			// console.log(ant);
-			app.displayCharacter(ant);
-			// console.log(captain);
-			app.displayCharacter(captain);
-			// console.log(doctor);
-			app.displayCharacter(doctor);
-
+			app.displayThor(thor);
+			console.log(thor);
+			app.displayGuard(guardians);
+			app.displayAnt(ant);
+			app.displayCap(captain);
+			app.displayDoc(doctor);
 		});
 };
 
@@ -35,7 +30,7 @@ var apikey = "3f46443479cb8f77ac54daa5c934d370";
 app.getComic = function(charID) {
 	// AJAX request for comics based on different character IDs
 	return $.ajax({
-		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/comics?limit=1&apikey=" + apikey,
+		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/comics?limit=5&apikey=" + apikey,
 		type: "GET",
 		dataType: "json"
 	});
@@ -44,7 +39,7 @@ app.getComic = function(charID) {
 app.getStory = function(charID) {
 	// AJAX request for series based on different character IDs
 	return $.ajax({
-		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/series?limit=1&apikey=" + apikey,
+		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/series?limit=5&apikey=" + apikey,
 		type: "GET",
 		dataType: "json"
 	});
@@ -68,74 +63,89 @@ app.getCharacterInfo = function(charID) {
 	return defer;
 };
 
-app.displayCharacter = function(charInfo) {
+app.displayThor = function(thor) {
 
-	var comicItem = charInfo.comic.data.results[0];
-	var storyItem = charInfo.story.data.results[0];
-	
-	// console.log(charInfo.comic.data.results[0]);
-	// console.log(charInfo.story.data.results[0]);
+	var thorComic = thor.comic.data.results;
+	var thorStory = thor.story.data.results[0];
 
+	for (i = 0; i <= thorComic.length; i++){
 		var $comicContainer = $("<div>");
 		$comicContainer.addClass("comic");
-
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",comicItem.thumbnail.path + "." + comicItem.thumbnail.extension);
-
+		$comicPic.attr("src",thorComic[i].thumbnail.path + "." + thorComic[i].thumbnail.extension);
 		var $comicDescrip = $("<p>");
-		$comicDescrip.text(comicItem.description);
-
+		$comicDescrip.text(thorComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".one").append($comicContainer);
+	};
+
+		
 };
 
+app.displayGuard = function(guard) {
 
-app.displayCharacter = function(charInfo) {
+	var guardComic = guard.comic.data.results[0];
+	var guardStory = guard.story.data.results[0];
 
-	var comicItem = charInfo.comic.data.results[0];
-	var storyItem = charInfo.story.data.results[0];
 	
-	// console.log(charInfo.comic.data.results[0]);
-	// console.log(charInfo.story.data.results[0]);
-
 		var $comicContainer = $("<div>");
 		$comicContainer.addClass("comic");
-
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",comicItem.thumbnail.path + "." + comicItem.thumbnail.extension);
-
+		$comicPic.attr("src",guardComic.thumbnail.path + "." + guardComic.thumbnail.extension);
 		var $comicDescrip = $("<p>");
-		$comicDescrip.text(comicItem.description);
-
+		$comicDescrip.text(guardComic.description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".two").append($comicContainer);
+		
 };
 
-// app.displayStories = function(storyInfo) {
+app.displayAnt = function(ant) {
+
+	var antComic = ant.comic.data.results[0];
+	var antStory = ant.story.data.results[0];
 	
-// 	// console.log(storyInfo);
-
-// 	$.each(storyInfo,function(index,item) {
-
-// 		var $storyContainer = $("<div>");
-// 		$storyContainer.addClass("story");
-
-// 		var $storyPic = $("<img>");
-// 		$storyPic.attr("src",item.thumbnail.path + "." + item.thumbnail.extension);
-
-// 		var $storyDescrip = $("<p>");
-// 		$storyDescrip.text(item.description);
-
-// 		$storyContainer.append($storyPic, $storyDescrip);
-
-// 		$(".one").append($storyContainer);
+		var $comicContainer = $("<div>");
+		$comicContainer.addClass("comic");
+		var $comicPic = $("<img>");
+		$comicPic.attr("src",antComic.thumbnail.path + "." + antComic.thumbnail.extension);
+		var $comicDescrip = $("<p>");
+		$comicDescrip.text(antComic.description);
+		$comicContainer.append($comicPic, $comicDescrip);
+		$(".three").append($comicContainer);
 		
-// 	})
-// };
+};
 
+app.displayCap = function(cap) {
 
+	var capComic = cap.comic.data.results[0];
+	var capStory = cap.story.data.results[0];
+	
+		var $comicContainer = $("<div>");
+		$comicContainer.addClass("comic");
+		var $comicPic = $("<img>");
+		$comicPic.attr("src",capComic.thumbnail.path + "." + capComic.thumbnail.extension);
+		var $comicDescrip = $("<p>");
+		$comicDescrip.text(capComic.description);
+		$comicContainer.append($comicPic, $comicDescrip);
+		$(".four").append($comicContainer);
+		
+};
 
+app.displayDoc = function(doc) {
 
+	var docComic = doc.comic.data.results[0];
+	var docStory = doc.story.data.results[0];
+	
+		var $comicContainer = $("<div>");
+		$comicContainer.addClass("comic");
+		var $comicPic = $("<img>");
+		$comicPic.attr("src",docComic.thumbnail.path + "." + docComic.thumbnail.extension);
+		var $comicDescrip = $("<p>");
+		$comicDescrip.text(docComic.description);
+		$comicContainer.append($comicPic, $comicDescrip);
+		$(".five").append($comicContainer);
+		
+};
 
 
 
