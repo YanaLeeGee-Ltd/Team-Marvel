@@ -2,36 +2,31 @@ var app = {};
 
 // The .when() method provides a way to execute callback functions based on one or more objects, usually deferred objects that represent asynchronous events.
 
+var thorId = 1009664;
+var guardiansId = 1011299;
+var antManId = 1010802;
+var captainId = 1009220;
+var drStrangeId = 1009282;
+
 app.init = function() {
+	//Here we make our getCharInfo calls based on the id of the character
+	$.when( app.getCharacterInfo(thorId), app.getCharacterInfo(guardiansId),
+	app.getCharacterInfo(antManId), app.getCharacterInfo(captainId), app.getCharacterInfo(drStrangeId) )
+		//And what is returned is our new bit of data
+		//it is associated with that characters 
+		.then(function(thor,guardians,ant,captain, doctor) {
+			// console.log(thor);
+			app.displayCharacter(thor);
+			// console.log(guardians);
+			app.displayCharacter(guardians);
+			// console.log(ant);
+			app.displayCharacter(ant);
+			// console.log(captain);
+			app.displayCharacter(captain);
+			// console.log(doctor);
+			app.displayCharacter(doctor);
 
-	var thorId = 1009664;
-	var guardiansId = 1011299;
-	var antManId = 1010802;
-	var captainId = 1009220;
-	var drStrangeId = 1009282;
-
-	// When the AJAX request has returned all five objects, then call the displayComics method for each
-	$.when( app.getComic(thorId), app.getComic(guardiansId),
-	app.getComic(antManId), app.getComic(captainId), app.getComic(drStrangeId) )
-	.then(function(thor, guardians, ant, captain, doctor) {
-		// We go inside the first item in the array of objects we get back, then we go inside the data object, and into the array of results
-		app.displayComics(thor[0].data.results);
-		app.displayComics(guardians[0].data.results);
-		app.displayComics(ant[0].data.results);
-		app.displayComics(captain[0].data.results);
-		app.displayComics(doctor[0].data.results);
-	})
-	// When the AJAX request has returned all five objects, then call the displayStories method for each
-	$.when( app.getStory(thorId), app.getStory(guardiansId),
-	app.getStory(antManId), app.getStory(captainId), app.getStory(drStrangeId) )
-	.then(function(thor, guardians, ant, captain, doctor) {
-		// We go inside the first item in the array of objects we get back, then we go inside the data object, and into the array of results
-		app.displayStories(thor[0].data.results);
-		app.displayStories(guardians[0].data.results);
-		app.displayStories(ant[0].data.results);
-		app.displayStories(captain[0].data.results);
-		app.displayStories(doctor[0].data.results);
-	})
+		});
 };
 
 // If we blow through all 3000 of our requests, just generate a new key and plug it in here
@@ -40,7 +35,7 @@ var apikey = "3f46443479cb8f77ac54daa5c934d370";
 app.getComic = function(charID) {
 	// AJAX request for comics based on different character IDs
 	return $.ajax({
-		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/comics?limit=10&apikey=" + apikey,
+		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/comics?limit=1&apikey=" + apikey,
 		type: "GET",
 		dataType: "json"
 	});
@@ -49,51 +44,94 @@ app.getComic = function(charID) {
 app.getStory = function(charID) {
 	// AJAX request for series based on different character IDs
 	return $.ajax({
-		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/series?limit=10&apikey=" + apikey,
+		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/series?limit=1&apikey=" + apikey,
 		type: "GET",
 		dataType: "json"
 	});
 };
+//Made a new method, that will return character info
+//based on two calls. One to getComic, and one to getStory.
+app.getCharacterInfo = function(charID) {
+	//We use the Deferred object from jQuery to create a new promize
+	//So we can determine what info we get back. 
+	var defer = $.Deferred();
+	//We then make our calls to getComic and getStory
+	$.when(app.getComic(charID),app.getStory(charID))
+	//When they return we want to change the data a bit
+	.then(function(charComics,charStories) {
+		//We then resolve our promize, with the info we want to send back.
+		defer.resolve({ comic: charComics[0], story: charStories[0] });
+	});
+	//We return the Deferred object here, so when we use it in $.when
+	//that method sees that it is a promize and it knows that it has to wait
+	//until it is resolved.
+	return defer;
+};
 
-app.displayComics = function(comicInfo) {
+app.displayCharacter = function(charInfo) {
+
+	var comicItem = charInfo.comic.data.results[0];
+	var storyItem = charInfo.story.data.results[0];
 	
-	// console.log(comicInfo);
-
-	$.each(comicInfo,function(index,item) {
+	// console.log(charInfo.comic.data.results[0]);
+	// console.log(charInfo.story.data.results[0]);
 
 		var $comicContainer = $("<div>");
 		$comicContainer.addClass("comic");
 
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",item.thumbnail.path + "." + item.thumbnail.extension);
+		$comicPic.attr("src",comicItem.thumbnail.path + "." + comicItem.thumbnail.extension);
 
 		var $comicDescrip = $("<p>");
-		$comicDescrip.text(item.description);
+		$comicDescrip.text(comicItem.description);
 
 		$comicContainer.append($comicPic, $comicDescrip);
-		$(".movie").append($comicContainer);
-	})
+		$(".one").append($comicContainer);
 };
 
-app.displayStories = function(storyInfo) {
+
+app.displayCharacter = function(charInfo) {
+
+	var comicItem = charInfo.comic.data.results[0];
+	var storyItem = charInfo.story.data.results[0];
 	
-	console.log(storyInfo);
+	// console.log(charInfo.comic.data.results[0]);
+	// console.log(charInfo.story.data.results[0]);
 
-	$.each(storyInfo,function(index,item) {
+		var $comicContainer = $("<div>");
+		$comicContainer.addClass("comic");
 
-		var $storyContainer = $("<div>");
-		$storyContainer.addClass("story");
+		var $comicPic = $("<img>");
+		$comicPic.attr("src",comicItem.thumbnail.path + "." + comicItem.thumbnail.extension);
 
-		var $storyPic = $("<img>");
-		$storyPic.attr("src",item.thumbnail.path + "." + item.thumbnail.extension);
+		var $comicDescrip = $("<p>");
+		$comicDescrip.text(comicItem.description);
 
-		var $storyDescrip = $("<p>");
-		$storyDescrip.text(item.description);
-
-		$storyContainer.append($storyPic, $storyDescrip);
-		$(".movie").append($storyContainer);
-	})
+		$comicContainer.append($comicPic, $comicDescrip);
+		$(".two").append($comicContainer);
 };
+
+// app.displayStories = function(storyInfo) {
+	
+// 	// console.log(storyInfo);
+
+// 	$.each(storyInfo,function(index,item) {
+
+// 		var $storyContainer = $("<div>");
+// 		$storyContainer.addClass("story");
+
+// 		var $storyPic = $("<img>");
+// 		$storyPic.attr("src",item.thumbnail.path + "." + item.thumbnail.extension);
+
+// 		var $storyDescrip = $("<p>");
+// 		$storyDescrip.text(item.description);
+
+// 		$storyContainer.append($storyPic, $storyDescrip);
+
+// 		$(".one").append($storyContainer);
+		
+// 	})
+// };
 
 
 
