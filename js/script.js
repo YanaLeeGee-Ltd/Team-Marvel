@@ -38,6 +38,7 @@ app.init = function() {
 var apikey = "3f46443479cb8f77ac54daa5c934d370";
 
 app.getComic = function(charID) {
+	// AJAX request for comics based on different character IDs
 	return $.ajax({
 		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/comics?limit=10&apikey=" + apikey,
 		type: "GET",
@@ -46,6 +47,7 @@ app.getComic = function(charID) {
 };
 
 app.getStory = function(charID) {
+	// AJAX request for series based on different character IDs
 	return $.ajax({
 		url: "http://gateway.marvel.com:80/v1/public/characters/" + charID + "/series?limit=10&apikey=" + apikey,
 		type: "GET",
