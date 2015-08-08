@@ -3,15 +3,19 @@
 @import 'variables';
 // FONT STYLES
 
+html,
+body {
+	height: 100%;
+}
+
 body {
 	font-family: $bodyCopy;
-	font-size: 13px;
+	// font-size: 13px;
 }
 
-
-h1, h2, h3, h4 {
-	font-family: $headerCopy;
-}
+// h1, h2, h3, h4 {
+// 	font-family: $headerCopy;
+// }
 // .wrapper {
 // 	display: flex;
 // 	justify-content: center;
@@ -38,127 +42,144 @@ h1, h2, h3, h4 {
 // 	}
 // }
 
-form input {
-	// display: none;
-	z-index: 30;
+// main {
+// 	height: 100%;
+// 	width: 100%;	
+// }
+
+.slideContainer {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-.comicStoryContent {
-	// overflow-y: hidden;
-	position: relative;
-	// overflow: hidden;
+.slide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top:0;
+  transition: all .75s ease-in-out;
 }
 
-.movie {
+.labels {
 	position: absolute;
+	left:0;
 	top:0;
-	width: 100%;
-	transition: all .75s ease-in-out;
+	z-index: 3;
 }
 
-.one {
-	background:red;
+.thorSlide {
+	background: url(../images/thor.jpg);
+	background-size:cover;
+	background-position: center;
 	left:0;
 }
 
-.two {
-	background:blue;
+.guardiansSlide {
+	background:url(../images/guardians.jpg);
+	background-size:cover;
+	background-position: center;
 	left:100%;
 }
 
-.three {
-	background: green;
+.antSlide {
+	background: url(../images/ant-man.jpg);
+	background-size:cover;
+	background-position: center;
 	left:200%;
 }
 
-.four {
-	background:yellow;
+.captainSlide {
+	background:url(../images/cpt-america.jpg);
+	background-size:cover;
+	background-position: center;
 	left:300%;
 }
 
-.five {
-	background: orange;
+.doctorSlide {
+	background:url(../images/dr-strange.jpg);
+	background-size:cover;
+	background-position: center;
 	left:400%;
 }
 
-.guardians:checked ~ .one {
+.guardians:checked ~ .thorSlide {
   left:-100%;
 }
 
-.guardians:checked ~ .two {
+.guardians:checked ~ .guardiansSlide {
   left:0;
 }
 
-.guardians:checked ~ .three {
+.guardians:checked ~ .antSlide {
   left:100%;
 }
 
-.guardians:checked ~ .four {
+.guardians:checked ~ .captainSlide {
   left:200%;
 }
 
-.guardians:checked ~ .five {
+.guardians:checked ~ .doctorSlide {
   left:300%;
 }
 
-.ant:checked ~ .one {
+.ant:checked ~ .thorSlide {
   left:-200%;
 }
 
-.ant:checked ~ .two {
+.ant:checked ~ .guardiansSlide {
   left:-100%;
 }
 
-.ant:checked ~ .three {
+.ant:checked ~ .antSlide {
   left:0;
 }
 
-.ant:checked ~ .four {
+.ant:checked ~ .captainSlide {
   left:100%;
 }
 
-.ant:checked ~ .five {
+.ant:checked ~ .doctorSlide {
   left:200%;
 }
 
-.captain:checked ~ .one {
+.captain:checked ~ .thorSlide {
   left:-300%;
 }
 
-.captain:checked ~ .two {
+.captain:checked ~ .guardiansSlide {
   left:-200%;
 }
 
-.captain:checked ~ .three {
+.captain:checked ~ .antSlide {
   left:-100%;
 }
 
-.captain:checked ~ .four {
+.captain:checked ~ .captainSlide {
   left:0;
 }
 
-.captain:checked ~ .five {
+.captain:checked ~ .doctorSlide {
   left:100%;
 }
 
-.doctor:checked ~ .one {
+.doctor:checked ~ .thorSlide {
   left:-400%;
 }
 
-.doctor:checked ~ .two {
+.doctor:checked ~ .guardiansSlide {
   left:-300%;
 }
 
-.doctor:checked ~ .three {
+.doctor:checked ~ .antSlide {
   left:-200%;
 }
 
-.doctor:checked ~ .four {
+.doctor:checked ~ .captainSlide {
   left:-100%;
 }
 
-.doctor:checked ~ .five {
+.doctor:checked ~ .doctorSlide {
   left:0;
 }
-
-
