@@ -69,10 +69,10 @@ app.displayThor = function(thor) {
 	var thorStory = thor.story.data.results;
 
 	for (i = 0; i < thorComic.length; i++){
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src", thorComic[i].thumbnail.path + "/portrait_fantastic." + thorComic[i].thumbnail.extension);
+		$comicPic.attr("src", thorComic[i].thumbnail.path + "." + thorComic[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(thorComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -80,10 +80,10 @@ app.displayThor = function(thor) {
 	};
 
 	for (i = 0; i < thorStory.length; i++){
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src", thorStory[i].thumbnail.path + "/portrait_fantastic" + "." + thorStory[i].thumbnail.extension);
+		$comicPic.attr("src", thorStory[i].thumbnail.path + "." + thorStory[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(thorStory[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -97,10 +97,10 @@ app.displayGuard = function(guard) {
 	var guardStory = guard.story.data.results;
 
 	for (i = 0; i < guardComic.length; i++) {
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src", guardComic[i].thumbnail.path + "/portrait_fantastic" + "." + guardComic[i].thumbnail.extension);
+		$comicPic.attr("src", guardComic[i].thumbnail.path + "." + guardComic[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(guardComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -108,10 +108,10 @@ app.displayGuard = function(guard) {
 	};	
 
 	for (i = 0; i < guardStory.length; i++) {
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src", guardStory[i].thumbnail.path + "/portrait_fantastic" + "." + guardStory[i].thumbnail.extension);
+		$comicPic.attr("src", guardStory[i].thumbnail.path + "." + guardStory[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(guardStory[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -126,10 +126,10 @@ app.displayAnt = function(ant) {
 	var antStory = ant.story.data.results;
 	
 	for (i = 0; i < antComic.length; i++){
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src", antComic[i].thumbnail.path + "/portrait_fantastic" + "." + antComic[i].thumbnail.extension);
+		$comicPic.attr("src", antComic[i].thumbnail.path + "." + antComic[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(antComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -137,10 +137,10 @@ app.displayAnt = function(ant) {
 	};
 
 	for (i = 0; i < antStory.length; i++){
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src", antStory[i].thumbnail.path + "/portrait_fantastic" + "." + antStory[i].thumbnail.extension);
+		$comicPic.attr("src", antStory[i].thumbnail.path + "." + antStory[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(antStory[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -155,10 +155,10 @@ app.displayCap = function(cap) {
 	var capStory = cap.story.data.results;
 
 	for (i = 0; i < capComic.length; i++){
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",capComic[i].thumbnail.path + "/portrait_fantastic" + "." + capComic[i].thumbnail.extension);
+		$comicPic.attr("src",capComic[i].thumbnail.path + "." + capComic[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(capComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -166,10 +166,10 @@ app.displayCap = function(cap) {
 	};	
 
 	for (i = 0; i < capStory.length; i++){
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src", capStory[i].thumbnail.path + "/portrait_fantastic" + "." + capStory[i].thumbnail.extension);
+		$comicPic.attr("src", capStory[i].thumbnail.path + "." + capStory[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(capStory[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -184,10 +184,10 @@ app.displayDoc = function(doc) {
 	var docStory = doc.story.data.results;
 
 	for (i = 0; i < docComic.length; i++){
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src",docComic[i].thumbnail.path + "/portrait_fantastic" + "." + docComic[i].thumbnail.extension);
+		$comicPic.attr("src",docComic[i].thumbnail.path + "." + docComic[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(docComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
@@ -195,10 +195,10 @@ app.displayDoc = function(doc) {
 	};	
 
 	for (i = 0; i < docStory.length; i++){
-		var $comicContainer = $("<div>");
-		// $comicContainer.addClass("comic");
+		var $comicContainer = $("<figure>");
+		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
-		$comicPic.attr("src", docStory[i].thumbnail.path + "/portrait_fantastic" + "." + docStory[i].thumbnail.extension);
+		$comicPic.attr("src", docStory[i].thumbnail.path + "." + docStory[i].thumbnail.extension).addClass("comicCover");
 		var $comicDescrip = $("<p>");
 		$comicDescrip.text(docStory[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
