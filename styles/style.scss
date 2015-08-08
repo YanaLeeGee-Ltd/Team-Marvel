@@ -49,9 +49,9 @@ body {
 
 .slideContainer {
   position: relative;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .slide {
@@ -70,37 +70,22 @@ body {
 }
 
 .thorSlide {
-	background: url(../images/thor.jpg);
-	background-size:cover;
-	background-position: center;
 	left:0;
 }
 
 .guardiansSlide {
-	background:url(../images/guardians.jpg);
-	background-size:cover;
-	background-position: center;
 	left:100%;
 }
 
 .antSlide {
-	background: url(../images/ant-man.jpg);
-	background-size:cover;
-	background-position: center;
 	left:200%;
 }
 
 .captainSlide {
-	background:url(../images/cpt-america.jpg);
-	background-size:cover;
-	background-position: center;
 	left:300%;
 }
 
 .doctorSlide {
-	background:url(../images/dr-strange.jpg);
-	background-size:cover;
-	background-position: center;
 	left:400%;
 }
 
@@ -182,4 +167,54 @@ body {
 
 .doctor:checked ~ .doctorSlide {
   left:0;
+}
+
+.thorHero {
+	height: 100%;
+	width: 100%;
+	background: url(../images/thor.jpg);
+	background-size:cover;
+	background-position: center;
+}
+
+.guardiansHero {
+	height: 100%;
+	width: 100%;
+	background:url(../images/guardians.jpg);
+	background-size:cover;
+	background-position: center;
+}
+
+.antHero {
+	height: 100%;
+	width: 100%;
+	background: url(../images/ant-man.jpg);
+	background-size:cover;
+	background-position: center;
+}
+
+.captainHero {
+	height: 100%;
+	width: 100%;
+	background:url(../images/cpt-america.jpg);
+	background-size:cover;
+	background-position: center;
+}
+
+.doctorHero {
+	height: 100%;
+	width: 100%;
+	background:url(../images/dr-strange.jpg);
+	background-size:cover;
+	background-position: center;
+}
+
+.thorComicStory {}
+.guardiansComicStory{}
+.antComicStory{}
+.captainComicStory{}
+.doctorComicStory{}
+
+.hidden {
+	// height: 0;
 }
