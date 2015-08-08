@@ -62,11 +62,20 @@ body {
   transition: all .75s ease-in-out;
 }
 
+input {
+	display: none;
+}
+
 .labels {
 	position: absolute;
 	left:0;
 	top:0;
 	z-index: 3;
+}
+
+label {
+	color:white;
+	font-size: 30px;
 }
 
 .thorSlide {
@@ -175,6 +184,15 @@ body {
 	background: url(../images/thor.jpg);
 	background-size:cover;
 	background-position: center;
+	position: relative;
+}
+
+.fa-bolt {
+	position: absolute;
+	right:0;
+	bottom:0;
+	color:yellow;
+	font-size: 35px;
 }
 
 .guardiansHero {
@@ -209,12 +227,15 @@ body {
 	background-position: center;
 }
 
-.thorComicStory {}
-.guardiansComicStory{}
-.antComicStory{}
-.captainComicStory{}
-.doctorComicStory{}
+.comic {
+	display: inline-block;
+	width: 25%;
+}
+
+.comicCover {
+	max-width: 100%;
+}
 
 .hidden {
-	// height: 0;
+	display: none;
 }
