@@ -176,7 +176,7 @@ app.displayCap = function(cap) {
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".four").append($comicContainer);
 	};
-		
+
 };
 
 app.displayDoc = function(doc) {
