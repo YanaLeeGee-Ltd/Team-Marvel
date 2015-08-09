@@ -4,13 +4,25 @@
 	<meta charset="UTF-8">
 	<title>MARVEL</title>
 	<link rel="stylesheet" href="styles/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='http://fonts.googleapis.com/css?family=Oswald:700,400|Lato:400,400italic,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link type="image/png" href="images/bolt.svg" rel="icon">
 	<link rel="icon" href="images/favicon.png"/>
 </head>
 <body>
+	<div class="loadOverlay">
+		<div class="soonContent">
+		  <p>From the <span class="marvel">Marvel</span> universe to the silver screen.</p>
+		  <div class="comingSoon">
+		    <p>Coming soon <span class="one">.</span><span class="two">.</span><span class="three">.</span></p>
+		  </div>
+		</div>
+	</div>
 	<div class="slideContainer">
+		<!-- <div class="marvel-title">
+			<h1>Marvel</h1>
+		</div> -->
 		<input type="radio" name="movie" id="thor" class="thor">
 		<input type="radio" name="movie" id="guardians" class="guardians">
 		<input type="radio" name="movie" id="ant" class="ant">
@@ -18,40 +30,70 @@
 		<input type="radio" name="movie" id="doctor" class="doctor">
 		<div class="thorSlide slide">
 			<div class="thorHero">
+				<div class="film">
+					<h2>Thor: Ragnarok</h2>
+				</div>
+				<div class="release">
+					<p class="date">fall 2017</p>
+				</div>
 				<i class="fa fa-5x fa-bolt"></i>
 			</div>
 			<div class="thorComicStory comicStory hidden"></div>
 		</div>
 		<div class="guardiansSlide slide">
 			<div class="guardiansHero">
+				<div class="film">
+					<h2>Guardians of the Galaxy Vol.2</h2>
+				</div>
+				<div class="release guardRelease">
+					<p class="date">spring 2017</p>
+				</div>
 				<i class="fa fa-5x fa-bolt"></i>
 			</div>
 			<div class="guardiansComicStory comicStory hidden"></div>
 		</div>
 		<div class="antSlide slide">
 			<div class="antHero">
+				<div class="film">
+					<h2>Ant-Man</h2>
+				</div>
+				<div class="release antRelease">
+					<p class="date">summer 2015</p>
+				</div>
 				<i class="fa fa-5x fa-bolt"></i>
 			</div>
 			<div class="antComicStory comicStory hidden"></div>
 		</div>
 		<div class="captainSlide slide">
 			<div class="captainHero">
+				<div class="film">
+					<h2>Captain America: Civil War</h2>
+				</div>
+				<div class="release">
+					<p class="date">spring 2016</p>
+				</div>
 				<i class="fa fa-5x fa-bolt"></i>
 			</div>
 			<div class="captainComicStory comicStory hidden"></div>
 		</div>
 		<div class="doctorSlide slide">
 			<div class="doctorHero">
+				<div class="film">
+					<h2>Doctor Strange</h2>
+				</div>
+				<div class="release">
+					<p class="date">fall 2016</p>
+				</div>
 				<i class="fa fa-5x fa-bolt"></i>
 			</div>
 			<div class="doctorComicStory comicStory hidden"></div>
 		</div>
 		<div class="labels">
-			<label for="thor">One</label>
-			<label for="guardians">Two</label>
-			<label for="ant">Three</label>
-			<label for="captain">Four</label>
-			<label for="doctor">Five</label>
+			<label for="thor" class="selected"></label>
+			<label for="guardians"></label>
+			<label for="ant"></label>
+			<label for="captain"></label>
+			<label for="doctor"></label>
 		</div>
 	</div>
 	<footer>
