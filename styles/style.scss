@@ -2,6 +2,12 @@
 @import 'normalize';
 @import 'variables';
 // FONT STYLES
+$red: #F01B1E;
+$darkGrey: #343F44;
+$lightGrey: #959595;
+$white: #F6F6F3;
+$headerCopy: 'Oswald', sans-serif;
+$bodyCopy: 'Lato', sans-serif; 
 
 html,
 body {
@@ -13,34 +19,135 @@ body {
 	// font-size: 13px;
 }
 
-// h1, h2, h3, h4 {
-// 	font-family: $headerCopy;
-// }
-// .wrapper {
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	flex-direction: column;
-// }
+// LOADING ANIMATION
 
-// .content-wrapper {
-// 	display: flex;
-// 	// overflow: hidden;
-// }
+.loadOverlay {
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 10;
+	visibility: visible;
+	opacity: 1;
+	width: 100vw;
+	height: 100vh;
+	background: #343F44;
+	display: flex;
+}
 
-// .marvel-title {
-// 	background: $red;
-// 	color: white;
-// 	width: 30%;
-// 	h1 {
-// 		text-align: center;
-// 		letter-spacing: -3px;
-// 		font-size: 60px;
-// 		text-transform: uppercase;
-// 		margin: 0 auto;
-// 		width: 100%;
-// 	}
-// }
+.soonContent {
+  background:$white;
+  width: 30%;
+  box-shadow: 5px 5px 0 0 #959595;
+  transform:skew(-15deg);
+  margin:auto;
+  position: relative;
+}
+
+.soonContent p {
+  margin:0;
+  padding: 70px;
+  transform:skew(15deg);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.marvel {
+	font-family: $headerCopy;
+	letter-spacing: -1px;
+	font-size: 25px;
+	text-transform: uppercase;
+	background: $red;
+	color: $white;
+}
+
+.comingSoon {
+  background:$white;
+  display: inline-block;
+  border: 2px solid black;
+  box-shadow: 4px 4px 0 -2px $white, 4px 4px 0 0 black;
+  position: absolute;
+  top:-27px;
+  left:-81px;
+  transform:skew(15deg);
+}
+
+.comingSoon p {
+  margin: 0;
+  padding: 15px;
+  transform:skew(0deg);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.one {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.0s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.0s;
+}
+
+.two {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.2s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.2s;
+}
+
+.three {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.3s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.3s;
+}
+
+@-webkit-keyframes dot {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes dot {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h1 {
+	font-family: $headerCopy;
+}
+
+.marvel-title {
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:5;
+	background: $red;
+	color: $white;
+	width: 30%;
+	h1 {
+		text-align: center;
+		letter-spacing: -3px;
+		font-size: 60px;
+		text-transform: uppercase;
+		margin: 0 auto;
+		width: 100%;
+	}
+}
 
 // main {
 // 	height: 100%;
@@ -69,13 +176,26 @@ input {
 .labels {
 	position: absolute;
 	left:0;
-	top:0;
+	bottom:0;
+	text-align: center;
+	width: 100%;
 	z-index: 3;
 }
 
 label {
-	color:white;
-	font-size: 30px;
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	// margin-right: 25px;
+	border:2px solid black;
+	border-radius: 50%;
+	background:$white;
+	margin:15px 5px;
+	box-shadow: 3px 3px 0 -2px $white, 3px 3px 0 0 black;
+}
+
+.selected {
+	background:$red;
 }
 
 .thorSlide {
@@ -237,5 +357,54 @@ label {
 }
 
 .hidden {
-	display: none;
+	// display: none;
+}
+
+h2 {
+	margin: 0;
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight:700;
+	text-align: center;
+}
+
+.film {
+	background:$white;
+	position: relative;
+	top:2%;
+	left:2%;
+	// text-align: center;
+	border:3px solid black;
+	padding:10px 25px;
+	display: inline-block;
+	z-index: 2;
+	width: 350px;
+	box-shadow: 6px 6px 0 -3px $white, 6px 6px 0 0 black;
+}
+
+.release {
+	// position: absolute;
+	// text-align: center;
+	// bottom:0;
+	width: 140px;
+	// left:100%;
+	background: $red;
+	padding: 3px 10px;
+	display: inline-block;
+	transform:skew(-18deg);
+	transform-origin: left center;
+	// z-index:1;
+}
+
+.antRelease,
+.guardRelease {
+	width: 160px;
+}
+
+.date {
+	margin: 0;
+	text-align: right;
+	transform:skew(18deg);
+	text-transform: uppercase;
+	// z-index:1;
 }

@@ -73,22 +73,24 @@ app.displayThor = function(thor) {
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
 		$comicPic.attr("src", thorComic[i].thumbnail.path + "." + thorComic[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
+		var $comicDescrip = $("<p>").addClass("description");
 		$comicDescrip.text(thorComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".thorComicStory").append($comicContainer);
 	};
 
-	for (i = 0; i < thorStory.length; i++){
-		var $comicContainer = $("<figure>");
-		$comicContainer.addClass("comic");
-		var $comicPic = $("<img>");
-		$comicPic.attr("src", thorStory[i].thumbnail.path + "." + thorStory[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
-		$comicDescrip.text(thorStory[i].description);
-		$comicContainer.append($comicPic, $comicDescrip);
-		$(".thorComicStory").append($comicContainer);
-	};
+	// for (i = 0; i < thorStory.length; i++){
+	// 	var $comicContainer = $("<figure>");
+	// 	$comicContainer.addClass("comic");
+	// 	var $comicPic = $("<img>");
+	// 	$comicPic.attr("src", thorStory[i].thumbnail.path + "." + thorStory[i].thumbnail.extension).addClass("comicCover");
+	// 	var $comicDescrip = $("<p>").addClass("description");
+	// 	$comicDescrip.text(thorStory[i].description);
+	// 	$comicContainer.append($comicPic, $comicDescrip);
+	// 	$(".thorComicStory").append($comicContainer);
+	// };
+
+	
 };
 
 app.displayGuard = function(guard) {
@@ -101,22 +103,22 @@ app.displayGuard = function(guard) {
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
 		$comicPic.attr("src", guardComic[i].thumbnail.path + "." + guardComic[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
+		var $comicDescrip = $("<p>").addClass("description");
 		$comicDescrip.text(guardComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".guardiansComicStory").append($comicContainer);
 	};	
 
-	for (i = 0; i < guardStory.length; i++) {
-		var $comicContainer = $("<figure>");
-		$comicContainer.addClass("comic");
-		var $comicPic = $("<img>");
-		$comicPic.attr("src", guardStory[i].thumbnail.path + "." + guardStory[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
-		$comicDescrip.text(guardStory[i].description);
-		$comicContainer.append($comicPic, $comicDescrip);
-		$(".guardiansComicStory").append($comicContainer);
-	};	
+	// for (i = 0; i < guardStory.length; i++) {
+	// 	var $comicContainer = $("<figure>");
+	// 	$comicContainer.addClass("comic");
+	// 	var $comicPic = $("<img>");
+	// 	$comicPic.attr("src", guardStory[i].thumbnail.path + "." + guardStory[i].thumbnail.extension).addClass("comicCover");
+	// 	var $comicDescrip = $("<p>").addClass("description");
+	// 	$comicDescrip.text(guardStory[i].description);
+	// 	$comicContainer.append($comicPic, $comicDescrip);
+	// 	$(".guardiansComicStory").append($comicContainer);
+	// };	
 		
 };
 
@@ -130,22 +132,22 @@ app.displayAnt = function(ant) {
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
 		$comicPic.attr("src", antComic[i].thumbnail.path + "." + antComic[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
+		var $comicDescrip = $("<p>").addClass("description");
 		$comicDescrip.text(antComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".antComicStory").append($comicContainer);
 	};
 
-	for (i = 0; i < antStory.length; i++){
-		var $comicContainer = $("<figure>");
-		$comicContainer.addClass("comic");
-		var $comicPic = $("<img>");
-		$comicPic.attr("src", antStory[i].thumbnail.path + "." + antStory[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
-		$comicDescrip.text(antStory[i].description);
-		$comicContainer.append($comicPic, $comicDescrip);
-		$(".antComicStory").append($comicContainer);
-	};	
+	// for (i = 0; i < antStory.length; i++){
+	// 	var $comicContainer = $("<figure>");
+	// 	$comicContainer.addClass("comic");
+	// 	var $comicPic = $("<img>");
+	// 	$comicPic.attr("src", antStory[i].thumbnail.path + "." + antStory[i].thumbnail.extension).addClass("comicCover");
+	// 	var $comicDescrip = $("<p>").addClass("description");
+	// 	$comicDescrip.text(antStory[i].description);
+	// 	$comicContainer.append($comicPic, $comicDescrip);
+	// 	$(".antComicStory").append($comicContainer);
+	// };	
 
 };
 
@@ -159,22 +161,22 @@ app.displayCap = function(cap) {
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
 		$comicPic.attr("src",capComic[i].thumbnail.path + "." + capComic[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
+		var $comicDescrip = $("<p>").addClass("description");
 		$comicDescrip.text(capComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".captainComicStory").append($comicContainer);
 	};	
 
-	for (i = 0; i < capStory.length; i++){
-		var $comicContainer = $("<figure>");
-		$comicContainer.addClass("comic");
-		var $comicPic = $("<img>");
-		$comicPic.attr("src", capStory[i].thumbnail.path + "." + capStory[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
-		$comicDescrip.text(capStory[i].description);
-		$comicContainer.append($comicPic, $comicDescrip);
-		$(".captainComicStory").append($comicContainer);
-	};
+	// for (i = 0; i < capStory.length; i++){
+	// 	var $comicContainer = $("<figure>");
+	// 	$comicContainer.addClass("comic");
+	// 	var $comicPic = $("<img>");
+	// 	$comicPic.attr("src", capStory[i].thumbnail.path + "." + capStory[i].thumbnail.extension).addClass("comicCover");
+	// 	var $comicDescrip = $("<p>").addClass("description");
+	// 	$comicDescrip.text(capStory[i].description);
+	// 	$comicContainer.append($comicPic, $comicDescrip);
+	// 	$(".captainComicStory").append($comicContainer);
+	// };
 
 };
 
@@ -188,59 +190,42 @@ app.displayDoc = function(doc) {
 		$comicContainer.addClass("comic");
 		var $comicPic = $("<img>");
 		$comicPic.attr("src",docComic[i].thumbnail.path + "." + docComic[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
+		var $comicDescrip = $("<p>").addClass("description");
 		$comicDescrip.text(docComic[i].description);
 		$comicContainer.append($comicPic, $comicDescrip);
 		$(".doctorComicStory").append($comicContainer);
 	};	
 
-	for (i = 0; i < docStory.length; i++){
-		var $comicContainer = $("<figure>");
-		$comicContainer.addClass("comic");
-		var $comicPic = $("<img>");
-		$comicPic.attr("src", docStory[i].thumbnail.path + "." + docStory[i].thumbnail.extension).addClass("comicCover");
-		var $comicDescrip = $("<p>");
-		$comicDescrip.text(docStory[i].description);
-		$comicContainer.append($comicPic, $comicDescrip);
-		$(".doctorComicStory").append($comicContainer);
-	};
+	// for (i = 0; i < docStory.length; i++){
+	// 	var $comicContainer = $("<figure>");
+	// 	$comicContainer.addClass("comic");
+	// 	var $comicPic = $("<img>");
+	// 	$comicPic.attr("src", docStory[i].thumbnail.path + "." + docStory[i].thumbnail.extension).addClass("comicCover");
+	// 	var $comicDescrip = $("<p>").addClass("description");
+	// 	$comicDescrip.text(docStory[i].description);
+	// 	$comicContainer.append($comicPic, $comicDescrip);
+	// 	$(".doctorComicStory").append($comicContainer);
+	// };
 		
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$(".fa-bolt").click(function(){
+	(".thorComicStory").toggle("hidden");
+});
 
 
 $(function() {
 	app.init();
+
+	$( ".fa-bolt" ).click(function() {
+	  $( ".hidden" ).toggle( "slow" );
+	});
+
+	$(".loadOverlay").delay(5000).fadeOut(500);
+
+	$("label").on("click", function(){
+		$(".selected").removeClass("selected");
+		$(this).addClass("selected");
+	});
+
 });
