@@ -209,10 +209,6 @@ app.displayDoc = function(doc) {
 		
 };
 
-$(".fa-bolt").click(function(){
-	(".thorComicStory").toggle("hidden");
-});
-
 
 $(function() {
 	app.init();

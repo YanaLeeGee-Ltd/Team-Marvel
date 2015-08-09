@@ -311,8 +311,16 @@ label {
 	position: absolute;
 	right:0;
 	bottom:0;
-	color:yellow;
-	font-size: 35px;
+	width: 120px;
+	fill:url(#MyGradientOne);
+	animation-name:thunder;
+	animation-duration:.5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes thunder {
+	0% {fill:url(#MyGradientTwo);}
+	100% {fill:url(#MyGradientOne);}
 }
 
 .guardiansHero {
@@ -357,7 +365,7 @@ label {
 }
 
 .hidden {
-	// display: none;
+	display: none;
 }
 
 h2 {
