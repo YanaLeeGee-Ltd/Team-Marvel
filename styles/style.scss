@@ -159,6 +159,7 @@ h1 {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  background: $lightGrey;
 }
 
 .slide {
@@ -357,7 +358,19 @@ label {
 
 .comic {
 	display: inline-block;
-	width: 25%;
+	position: relative;	
+	width: calc((100% / 3) - (20px * 2));
+	margin: 20px;
+	overflow: hidden;	
+}
+
+.comic:hover .description {
+	visibility:visible;
+	opacity: 1;
+}
+
+.comicStory {
+	background: $lightGrey;
 }
 
 .comicCover {
@@ -415,4 +428,33 @@ h2 {
 	transform:skew(18deg);
 	text-transform: uppercase;
 	// z-index:1;
+}
+
+
+
+.description {
+	position: absolute;
+	top:0;
+	left: 0;
+	color:white;
+	background:rgba(52,63,68,0.6);
+	margin: 0;	
+	height: 100%;	
+	width: 100%;	
+	padding: 25px;	
+	visibility:hidden;
+	opacity:0;
+	transition: all .25s ease-in-out;
+}
+
+footer {
+	background: $darkGrey;
+	text-align: center;	
+	color:$white;
+	padding:20px 0;
+}
+
+footer a {
+	text-decoration: none;
+	color:$white;
 }
